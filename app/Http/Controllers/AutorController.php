@@ -18,7 +18,7 @@ class AutorController extends Controller
         }
 
         // Paginação
-        $autores = $query->paginate($request->input('perPage', 10));
+        $autores = $query->paginate($request->input('perPage', 50));
 
         return view('autores.index', compact('autores'));
     }
@@ -87,4 +87,5 @@ class AutorController extends Controller
         // Redirecionar com mensagem de sucesso
         return redirect()->route('autores.index')->with('success', 'Autor excluído com sucesso!');
     }
+
 }
